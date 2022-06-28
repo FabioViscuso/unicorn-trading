@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { SignUpModal } from './SignUpModal'
 import { Link } from "react-router-dom";
 
-export function Sidebar({ user, setLogin, setLogout }) {
+export function Sidebar({ user, setLogin, setLogout, syncUserState }) {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
     const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false)
 
@@ -82,8 +82,8 @@ export function Sidebar({ user, setLogin, setLogout }) {
                     <div className="border_b w-100"></div>
                 </button>}
             </div>
-            {isLoginModalOpen && <LoginModal user={user} modalSetLogin={setLogin} closeModal={closeLoginModalHandler} />}
-            {isSignUpModalOpen && <SignUpModal closeModal={closeSignUpModalHandler} />}
+            {isLoginModalOpen && <LoginModal user={user} setLoginFunction={setLogin} closeModal={closeLoginModalHandler} />}
+            {isSignUpModalOpen && <SignUpModal syncUserState={syncUserState} closeModal={closeSignUpModalHandler} />}
         </nav >
     )
 }

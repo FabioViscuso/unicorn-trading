@@ -2,7 +2,7 @@
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = './register'; */
 
-export function SignUpModal({ closeModal }) {
+export function SignUpModal({ syncUserState, closeModal }) {
 
     function writeToStorageHandler(event) {
         event.preventDefault()
@@ -13,6 +13,8 @@ export function SignUpModal({ closeModal }) {
             logged: false
         }
         localStorage.setItem('user', JSON.stringify(formData))
+        syncUserState()
+        closeModal()
     }
 
     return (
