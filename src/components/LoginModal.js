@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Navigate } from "react-router-dom";
 
-export function LoginModal({ closeModal, user, modalSetLogin }) {
+export function LoginModal({ user, setLoginFunction, closeModal }) {
     const [login, setLogin] = useState({
         loginUsername: '',
         loginPassword: '',
@@ -19,7 +19,7 @@ export function LoginModal({ closeModal, user, modalSetLogin }) {
     function userValidation() {
         if (login.loginUsername === user.username
             && login.loginPassword === user.password) {
-            modalSetLogin()
+            setLoginFunction()
             closeModal()
         } else {
             console.log('check your inputs')
