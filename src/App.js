@@ -21,6 +21,12 @@ function App() {
         localStorage.setItem('user', data)
     }, [user])
 
+    const syncUserState = () => {
+        const data = JSON.parse(localStorage.getItem('user'))
+        const { username, password } = data
+        setUser({ ...user, username, password })
+    }
+
     const setLogin = () => {
         setUser({ ...user, logged: true })
     }
@@ -32,7 +38,7 @@ function App() {
     return (
         <div className="font-['Quicksand'] flex md:flex-row flex-col ">
             <Particles options={particlesOptions} init={particlesInit} />
-            <Sidebar user={user} setLogin={setLogin} setLogout={setLogout} />
+            <Sidebar user={user} syncUserState={syncUserState}  setLogin={setLogin} setLogout={setLogout} />
             <Routes>
                 <Route path='/' element={<Homepage />} />
                 <Route element={<Protected user={user} />} >
