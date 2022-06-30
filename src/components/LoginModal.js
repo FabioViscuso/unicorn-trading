@@ -17,7 +17,7 @@ export function LoginModal({ user, setLoginFunction, closeModal }) {
     }
 
     function userValidation() {
-        if (login.loginUsername === user.username
+        if (login.loginUsername === user.username 
             && login.loginPassword === user.password) {
             setLoginFunction()
             closeModal()
