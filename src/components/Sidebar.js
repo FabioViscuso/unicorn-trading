@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { SignUpModal } from './SignUpModal'
 import { Link } from "react-router-dom";
 
-export function Sidebar({ user, setLogin, setLogout, syncUserState }) {
+export function Sidebar({ user, setLogin, setLogout, syncUserState}) {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
     const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false)
 
