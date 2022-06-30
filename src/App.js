@@ -30,7 +30,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className="font-['Quicksand'] flex md:flex-row flex-col ">
             <Particles options={particlesOptions} init={particlesInit} />
             <Sidebar user={user} setLogin={setLogin} setLogout={setLogout} />
             <Routes>
