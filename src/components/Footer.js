@@ -5,8 +5,8 @@ export class Footer extends React.Component {
     
 
         return (
-            <footer className="footer row-wrap flex flex-col justify-between center p-xl">
-                <img className="animate-ping ml-64" src='../images/Sidebar/unicorno_logo.png' width='120' >
+            <footer className="footer row-wrap flex flex-col justify-between center p-xl ">
+                <img className="animate-ping p-6 ml-64" src='../images/Sidebar/unicorno_logo.png' width='120' >
                 </img>
 
                 <div className="footer-links flex flex-row px-10 gap-10 ">
